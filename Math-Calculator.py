@@ -366,7 +366,8 @@ class mainControls():
 
                 #Tell the user that there input is invalid
                 self.output.config(state = 'normal')
-                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n\n')
+                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n')
+                self.output.insert('end', '_____________________________________________________________________________________\n\n')
                 self.output.config(state = 'disabled')
              #
             else:
@@ -384,7 +385,8 @@ class mainControls():
 
                 #Tell the user that there input is invalid.
                 self.output.config(state = 'normal')
-                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n\n')
+                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n')
+                self.output.insert('end', '_____________________________________________________________________________________\n\n')
                 self.output.config(state = 'disabled')
              #
             else:
@@ -402,7 +404,8 @@ class mainControls():
 
                 #Tell the user that there input is invalid.
                 self.output.config(state = 'normal')
-                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n\n')
+                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n')
+                self.output.insert('end', '_____________________________________________________________________________________\n\n')
                 self.output.config(state = 'disabled')
              #  
             else:
@@ -430,7 +433,8 @@ class mainControls():
 
                #Tell the user that there input is invalid.
                 self.output.config(state = 'normal')
-                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n\n')
+                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n')
+                self.output.insert('end', '_____________________________________________________________________________________\n\n')
                 self.output.config(state = 'disabled') 
 
              #
@@ -450,7 +454,8 @@ class mainControls():
 
                #Tell the user that there input is invalid.
                 self.output.config(state = 'normal')
-                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n\n')
+                self.output.insert('end', 'Invalid Input. Enter whole numbers only.\n')
+                self.output.insert('end', '_____________________________________________________________________________________\n\n')
                 self.output.config(state = 'disabled') 
 
              #
@@ -466,7 +471,8 @@ class mainControls():
                 except:
                      #Tell the user that there input is invalid.
                     self.output.config(state = 'normal')
-                    self.output.insert('end', 'Invalid Input. Enter a number that has numbers after the decimal point.\n\n')
+                    self.output.insert('end', 'Invalid Input. Enter a number that has numbers after the decimal point.\n')
+                    self.output.insert('end', '_____________________________________________________________________________________\n\n')
                     self.output.config(state = 'disabled')
 
                 if f'{float(self.decimalInput.get())}'[self.tmp:] != '.0': #Check to see if it is just zeros after the decimal point.
@@ -489,12 +495,14 @@ class mainControls():
                                 
                         #Tell the user that there input is invalid.
                         self.output.config(state = 'normal')
-                        self.output.insert('end', 'Invalid Input. Enter a decimal number only.\n\n')
+                        self.output.insert('end', 'Invalid Input. Enter a decimal number only.\n')
+                        self.output.insert('end', '_____________________________________________________________________________________\n\n')
                         self.output.config(state = 'disabled')
                 else:
                     #Tell the user that there input is invalid.
                     self.output.config(state = 'normal')
-                    self.output.insert('end', 'Invalid Input. Enter a number that has numbers after the decimal point.\n\n')
+                    self.output.insert('end', 'Invalid Input. Enter a number that has numbers after the decimal point.\n')
+                    self.output.insert('end', '_____________________________________________________________________________________\n\n')
                     self.output.config(state = 'disabled')
       
 
@@ -737,10 +745,6 @@ class Decimal():
             self.output.config(state = 'normal')
             self.output.insert('end', '_____________________________________________________________________________________\n\n')
             self.output.config(state = 'disabled')
-
-                    
-            
-
 
 def main():
     #Setup the top level window
