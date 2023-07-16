@@ -505,8 +505,6 @@ class mainControls():
                     self.output.insert('end', '_____________________________________________________________________________________\n\n')
                     self.output.config(state = 'disabled')
       
-
-
 class Simplifying():
 
     def __init__(self, output = None, nume = '0', deno = '0'):
@@ -518,10 +516,10 @@ class Simplifying():
 
 
     def calculate(self):
-        self.fail = 0 #This will keep track of the number of times it fialed to properly divied the nume and deno
+        fail = 0 #This will keep track of the number of times it fialed to properly divied the nume and deno
 
-        while self.fail != 9: #If it didn't fialed to divied 9 times
-            self.fail = 0
+        while fail != 9: #If it didn't fialed to divied 9 times
+            fail = 0
 
             for i in range(10, 1, -1): #This will go through the 9 unique numbers which are 10,9,8,7,6,5,4,3,2. 
                 
@@ -538,10 +536,10 @@ class Simplifying():
                      #
                     else:
                         #If not then add one 
-                        self.fail += 1
+                        fail += 1
                 else:
                     #If not then add one
-                    self.fail += 1
+                    fail += 1
 
 
         if self.nume == self.deno:
@@ -602,10 +600,6 @@ class Simplifying():
         self.output.insert('end', '_____________________________________________________________________________________\n\n')
         self.output.config(state = 'disabled')
 
-
-
-
-
 class Fraction():
     
     def __init__(self, nume = '0', deno = '0', output = None, funcNum = None): 
@@ -614,29 +608,28 @@ class Fraction():
         self.output = output #This will have the ouptut text widget that will be passed in.
         self.funcNum = funcNum #This will tell what calculation we should execute. 
 
-
     def calculate(self):
         
         if self.funcNum == 'p': #Fraction to precent
             
             if self.deno <= 100: #Is the denominator less than 100?
 
-                self.multi = 100 / self.deno #This wsill get the number that takes the denominator to 100
+                multi = 100 / self.deno #This will get the number that takes the denominator to 100
                 
                 
                 #Display the answer
                 self.output.config(state = 'normal')
-                self.output.insert('end', f'The fraction {self.nume} / {self.deno} is {(self.nume * self.multi)}%\n')
+                self.output.insert('end', f'The fraction {self.nume} / {self.deno} is {(self.nume * multi)}%\n')
                 self.output.config(state = 'disable')
              #
             else: #The denominator is greater than 100
 
-                self.multi = self.deno / 100 #This will get the number that takes the denominator to 100
+                multi = self.deno / 100 #This will get the number that takes the denominator to 100
                 
 
                 #Display the answer
                 self.output.config(state = 'normal')
-                self.output.insert('end', f'The fraction {self.nume}/{self.deno} is {(self.nume / self.multi)}%\n')
+                self.output.insert('end', f'The fraction {self.nume}/{self.deno} is {(self.nume / multi)}%\n')
                 self.output.config(state = 'disabled')
          #
         elif self.funcNum == 'd': # fraction to decimal
@@ -709,18 +702,18 @@ class Decimal():
         if self.funcNum == 'f': #Decimal to Fraction
             
             self.deno = '1 ' #This will become the denominator for decimal.
-            self.multiplier = 10 #This will be gets the decimal to a whole number.
-            self.time = 0 #This will track the amount of times we will have to multiply 10 times the decimal.
-            self.tmp = int(self.decimal) #This stores the int version of dceimal
+            multiplier = 10 #This will be gets the decimal to a whole number.
+            time = 0 #This will track the amount of times we will have to multiply 10 times the decimal.
+            tmp = int(self.decimal) #This stores the int version of decimal
 
-            while self.tmp != self.endRusult:
+            while tmp != self.endRusult:
 
-                self.time += 1
-                self.decimal = self.decimal * self.multiplier
-                self.tmp = int(self.decimal)
+                time += 1
+                self.decimal = self.decimal * multiplier
+                tmp = int(self.decimal)
 
             
-            for i in range(self.time):
+            for i in range(time):
                 self.deno = self.deno.replace(' ', '0 ') #By adding a zero and a space we can keep adding zeros to the end of the string.
 
             self.deno = int(self.deno) #Onces we have added the nessesary number of zeros to the orignal 1 we can now turn it into an int.
